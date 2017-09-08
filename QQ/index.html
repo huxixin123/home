@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/config.js"></script>
+    <script src="js/vue2.js"></script>
+</head>
+<body>
+    <div id="app" class="wrap">
+        <header>
+            <img src="./img/12.jpg">
+            <span class="message">消息</span>
+            <span><i class="iconfont icon-jia"></i></span>
+        </header>
+        <div class="box" id="box">
+        <section>
+            
+            <div class="search"><input type="text" class="inp">
+                <p class="big"><i class="iconfont icon-fangdajing"></i><b> 搜索</b></p>
+            </div>
+            <dl class="navBar" v-for="item in qq.qqTxt">
+                <!--{{item}}-->
+                <dt>
+                    <img v-bind:src='item.img'>
+                </dt>
+                <dd>
+                    <p class="left">
+                        <span><span class="titleHead">{{item.title}}</span><i v-bind:class='item.icon' class="ii"></i> </span>
+                        <span v-bind:class="item.No1">{{item.txt}}</span>
+                    </p>
+                    <p class="right">
+                        <span class="time">{{item.time}}</span>
+                        <span class="t"></span>
+                    </p>
+                </dd>
+            </dl>
+        </section>
+        </div>
+        <footer>
+            <ul>
+                <li><i class="iconfont icon-xinxi"></i><span>消息</span>
+                <li><i class="iconfont icon-icongerenzhongxin-01"></i><span>联系人</span></li>
+                <li><i class="iconfont icon-weixinpengyouquan"><b class="bg"></b></i><span>动态</span></li>
+            </ul>
+        </footer>
+    </div>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/iscroll5.js"></script>
+    <script src="js/main.js"></script>
+    
+</body>
+</html>
