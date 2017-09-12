@@ -96,7 +96,8 @@ input{
         .navBar dt{
             display: flex;
             align-items: center;
-            width: 15%;
+            justify-content: center;
+            width: .5rem;
             margin: 5px 0;
         }
         .navBar dt img{

@@ -84,7 +84,8 @@ input {
     .wrap section .navBar dt {
       display: flex;
       align-items: center;
-      width: 15%;
+      justify-content: center;
+      width: .5rem;
       margin: 5px 0; }
     .wrap section .navBar dt img {
       height: .5rem;

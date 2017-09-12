@@ -21,5 +21,6 @@ var app = new Vue({
     updated(){
         myScroll.refresh();
     }
+    
 })
 var myScroll = new IScroll("#box");

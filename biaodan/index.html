@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="http://cdn.bootcss.com/animate.css/3.5.2/animate.min.css">
+<script>
+	document.documentElement.style.fontSize=window.innerWidth/375*100+"px";
+</script>
+<link rel="stylesheet" href="style.css">
+<style>
+	.fade-enter{
+		transform:scale(1.5)
+	}
+	.fade-enter-active{
+        animation:bounce 2s;
+    }
+	.fade-enter-to{
+		transform:scale(1)
+	}
+	.fade-leave{
+		transform:scale(1)
+	}
+	.fade-leave-active{
+		 animation:bounce 2s;
+	}
+	.fade-leave-to{
+		transform:scale(1.5)
+	}
+</style>
+</head>
+<body>
+	<header>
+		<p>京东注册</p>
+	</header>
+	<div id="box">
+	</div>
+	<template id="tem">
+		<div>
+			<transition  name="fade">
+				<div class="inp" v-if="state">
+					<input type="text" v-model="identifying" placeholder="验证码">
+					<input type="number" v-model="phone" placeholder="手机号">
+					<input type="text" v-model="PhoneIn" placeholder="手机验证码">
+					<input type="password" v-model="pwd" placeholder="密码">
+				</div>
+			</transition>
+			<input type="button" @click="fn()" value="注册" class="zhu"> 
+			<button @click="clickGet()" class="sure">确认</button>
+		</div>
+		
+	</template>
+	
+</body>
+<script src="js/vue2.js"></script>
+<script>
+	var vn=new Vue({
+		el:"#box",
+		template:"#tem",
+		data:{
+			identifying:"",
+			phone:"",
+			PhoneIn:"",
+			pwd:"",
+			state:true
+		},
+		methods:{
+			fn(){
+				 console.log("验证码:"+vn.identifying);
+				 console.log("手机号"+vn.phone);
+				 console.log("手机验证码:"+vn.PhoneIn); 
+				 console.log("密码:"+vn.pwd)
+			},
+			clickGet(){
+				this.state=!this.state
+			}
+		}
+	})
+</script>
+</html>
