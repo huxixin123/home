@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+   <!--  <link rel="stylesheet" href="./fonts/iconfont.css"> -->
+    <style>
+    @import url(../fonts/iconfont.css);
+    @charset "UTF-8";
+    *{
+      margin:0;
+      padding: 0;
+    }
+    input {
+       outline: none;
+     }
+    html,body{
+      height: 100%;
+      width: 100%;
+      font-size: 16px;
+    }
+    .wrap {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    }
+    .wrap header {
+    display: flex;
+    flex-shrink: 0;
+    margin: 10px 10px;
+    align-items: center;
+    justify-content: space-between;
+    height: 30px; }
+    .wrap header .rightIco {
+      width: 60px;
+      display: flex;
+      height: 100%; }
+    .wrap header .inp {
+      flex: 1;
+      height: 100%;
+      margin: 0 20px;
+      border-radius: 5px;
+      display: flex;
+      border: 0;
+      position: relative; }
+    .wrap header .put {
+      flex: 1;
+      text-indent: 25px;
+      background: #eceaea;
+      border-radius: 10px;
+      border: 0; }
+    .wrap header .rightIco i {
+      flex: 1;
+      height: 100%;
+      align-items: center;
+      display: flex;
+      justify-content: center; }
+    .wrap header .big {
+      padding: 0 3px;
+      color: #999;
+      position: absolute;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      left: 0;
+      top: 0; }
+    .wrap section {
+    flex-shrink: 1;
+    flex-grow: 1;
+    overflow-y: auto;
+    background: #eee; }
+   .wrap footer ul {
+      width: 100%;
+      display: flex; }
+    .wrap footer li {
+      display: flex;
+      flex: 1;
+      align-items: center;
+      flex-direction: column; 
+      padding: 10px 0;
+    }
+    .wrap footer a{
+      display: flex;
+      flex: 1;
+      align-items: center;
+      flex-direction: column; 
+      padding: 10px 0;
+      text-decoration: none;
+    }
+    .wrap footer a:nth-child(3) {
+      position: relative; }
+    .wrap footer li:nth-child(3) {
+      position: relative; }
+    .wrap footer i {
+      font-size: 22px; }
+    .wrap footer span {
+      font-size: 14px; }
+    .wrap footer .img {
+      height: .5rem;
+      width: .5rem;
+      position: absolute;
+      top: -.25rem;
+      background: #fff;
+      padding: 5px 5px;
+      border-radius: 50%;
+      }
+    </style>
+</head>
+<body>
+    <div id="app" class="wrap">
+      <header>
+        <i class="iconfont icon-youxiang1 xin"></i>
+        <p class="inp"><i class="iconfont icon-fangdajing big"></i><input type="text" class="put" placeholder="观看嘟嘟 | 菜菜 | 鬼故事"></p>
+        <p class="rightIco">
+          <i class="iconfont icon-shizhong1"></i>
+          <i class="iconfont icon-fenxiang"></i>
+        </p>
+      </header>
+   		<!-- <router-link to="/tab">tab</router-link>
+   		<router-link :to={name:"lists",params:{id:1}} append>list</router-link> -->
+      <section>
+         <router-view></router-view>
+      </section>
+      
+
+      <footer>
+      <ul>
+        <router-link to="/tab"><li><i class="iconfont icon-iconhuidaoshouye"></i><span>首页</span></li></router-link>
+        <router-link to="/list"><li><i class="iconfont icon-erji"></i><span>我听</span></li></router-link>
+        <router-link to="/"><li><img src="./img/1.jpg" class="img"></li></router-link>
+        <router-link to="/listen"><li><i class="iconfont icon-weixuanzhong-01"></i><span>发现</span></li></router-link>
+        <router-link to="/add"><li><i class="iconfont icon-daishouhuo-01"></i><span>未登录</span></li></router-link>
+      </ul>
+    </footer>
+
+    </div>
+</body>
+<script>
+  document.documentElement.style.fontSize=window.innerWidth/375*100+"px";
+</script>
+</html>
